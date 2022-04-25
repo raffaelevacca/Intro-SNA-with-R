@@ -1,2 +1,2 @@
-# Intro_SNA_with_R
- Quick introduction to `igraph` and `graph` for SNA.
+# SNA with R
+ GitHub repo for [this webpage](https://raffaelevacca.github.io/Intro-SNA-with-R/).

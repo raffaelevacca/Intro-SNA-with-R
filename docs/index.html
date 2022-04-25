@@ -1533,6 +1533,7 @@ University of Milan<br><a class="author_email" href="mailto:#"><a href="https://
 </div>
 
 
+<p>Quick introduction to <a href="https://igraph.org/r/"><code>igraph</code></a> and <a href="https://ggraph.data-imaginist.com/"><code>ggraph</code></a> for SNA in R, materials for my PhD seminars at <a href="https://www.nasp.eu/training/phd-programmes/esls.html">Unimi</a> and <a href="https://en.unimib.it/education/doctoral-research-phd-programmes/phd-programmes/urbeur-%E2%80%93-urban-studies">Unimib</a>.</p>
 <div id="importing-and-visualizing-network-data" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Importing and visualizing network data</h1>
 <ul>
@@ -1572,9 +1573,9 @@ class(graph)</code></pre>
 <pre><code>## [1] &quot;igraph&quot;</code></pre>
 <pre class="r"><code># Summary information about this network
 graph</code></pre>
-<pre><code>## IGRAPH 47248d4 DN-- 11 44 -- 
+<pre><code>## IGRAPH ece8bb0 DN-- 11 44 -- 
 ## + attr: name (v/c), tie_weight (e/n)
-## + edges from 47248d4 (vertex names):
+## + edges from ece8bb0 (vertex names):
 ##  [1] David-&gt;Sofia  David-&gt;Maria  David-&gt;Lem    David-&gt;Beth   David-&gt;Mark  
 ##  [6] David-&gt;Amber  Sofia-&gt;David  Sofia-&gt;Maria  Sofia-&gt;Beth   Sofia-&gt;Amber 
 ## [11] Maria-&gt;David  Maria-&gt;Sofia  Maria-&gt;Lem    Maria-&gt;Beth   Maria-&gt;Amber 
@@ -1628,9 +1629,9 @@ graph &lt;- graph_from_data_frame(d= elist, vertices= vert.attr)
 
 # The igraph object now includes vertex attributes
 graph</code></pre>
-<pre><code>## IGRAPH 4ae9416 DN-- 12 44 -- 
+<pre><code>## IGRAPH a0391e2 DN-- 12 44 -- 
 ## + attr: name (v/c), age (v/n), grade (v/n), sex (v/c), tie_weight (e/n)
-## + edges from 4ae9416 (vertex names):
+## + edges from a0391e2 (vertex names):
 ##  [1] David-&gt;Sofia  David-&gt;Maria  David-&gt;Lem    David-&gt;Beth   David-&gt;Mark  
 ##  [6] David-&gt;Amber  Sofia-&gt;David  Sofia-&gt;Maria  Sofia-&gt;Beth   Sofia-&gt;Amber 
 ## [11] Maria-&gt;David  Maria-&gt;Sofia  Maria-&gt;Lem    Maria-&gt;Beth   Maria-&gt;Amber 
@@ -1718,12 +1719,12 @@ ggraph(graph) +
 </ul>
 <pre class="r"><code># Vertex sequence of the graph
 V(graph)</code></pre>
-<pre><code>## + 12/12 vertices, named, from 4ae9416:
+<pre><code>## + 12/12 vertices, named, from a0391e2:
 ##  [1] Amber  Beth   David  Jim    Jose   Kent   Lem    Maria  Mark   Randy 
 ## [11] Sofia  Thomas</code></pre>
 <pre class="r"><code># Edge sequence of the graph
 E(graph)</code></pre>
-<pre><code>## + 44/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 44/44 edges from a0391e2 (vertex names):
 ##  [1] David -&gt;Sofia  David -&gt;Maria  David -&gt;Lem    David -&gt;Beth   David -&gt;Mark  
 ##  [6] David -&gt;Amber  Sofia -&gt;David  Sofia -&gt;Maria  Sofia -&gt;Beth   Sofia -&gt;Amber 
 ## [11] Maria -&gt;David  Maria -&gt;Sofia  Maria -&gt;Lem    Maria -&gt;Beth   Maria -&gt;Amber 
@@ -1841,11 +1842,11 @@ E(graph)$tie_weight %&gt;%
 <pre><code>## [1] 2.318182</code></pre>
 <pre class="r"><code># View female actors
 V(graph)[sex==&quot;F&quot;]</code></pre>
-<pre><code>## + 4/12 vertices, named, from 4ae9416:
+<pre><code>## + 4/12 vertices, named, from a0391e2:
 ## [1] Amber Beth  Maria Sofia</code></pre>
 <pre class="r"><code># View strong ties
 E(graph)[tie_weight &gt; 2]</code></pre>
-<pre><code>## + 15/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 15/44 edges from a0391e2 (vertex names):
 ##  [1] David -&gt;Beth   Sofia -&gt;Maria  Maria -&gt;Sofia  Maria -&gt;Amber  Lem   -&gt;Jim   
 ##  [6] Jim   -&gt;Lem    Jim   -&gt;Beth   Beth  -&gt;David  Beth  -&gt;Sofia  Beth  -&gt;Jim   
 ## [11] Beth  -&gt;Amber  Kent  -&gt;Thomas Amber -&gt;Sofia  Amber -&gt;Maria  Thomas-&gt;Kent</code></pre>
@@ -1896,7 +1897,7 @@ plot(graph, edge.arrow.size=0.5, vertex.label.cex=0.5, vertex.label.color= &quot
 
 # View all actors who know Mark
 V(graph)[nei(&quot;Mark&quot;)]</code></pre>
-<pre><code>## + 3/12 vertices, named, from 4ae9416:
+<pre><code>## + 3/12 vertices, named, from a0391e2:
 ## [1] Amber David Jose</code></pre>
 <pre class="r"><code># View the age of all actors who know Mark.
 V(graph)[nei(&quot;Mark&quot;)]$age</code></pre>
@@ -1907,13 +1908,13 @@ V(graph)[nei(&quot;Mark&quot;)]$age %&gt;%
 <pre><code>## [1] 25</code></pre>
 <pre class="r"><code># View all edges that are incident on David
 E(graph)[inc(&quot;David&quot;)]</code></pre>
-<pre><code>## + 12/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 12/44 edges from a0391e2 (vertex names):
 ##  [1] David-&gt;Sofia David-&gt;Maria David-&gt;Lem   David-&gt;Beth  David-&gt;Mark 
 ##  [6] David-&gt;Amber Sofia-&gt;David Maria-&gt;David Lem  -&gt;David Beth -&gt;David
 ## [11] Mark -&gt;David Amber-&gt;David</code></pre>
 <pre class="r"><code># All edges &quot;to&quot; David
 E(graph)[to(&quot;David&quot;)]</code></pre>
-<pre><code>## + 6/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 6/44 edges from a0391e2 (vertex names):
 ## [1] Sofia-&gt;David Maria-&gt;David Lem  -&gt;David Beth -&gt;David Mark -&gt;David
 ## [6] Amber-&gt;David</code></pre>
 <pre class="r"><code># View the strength of these edges
@@ -1925,17 +1926,17 @@ E(graph)[to(&quot;David&quot;)]$tie_weight %&gt;%
 <pre><code>## [1] 2</code></pre>
 <pre class="r"><code># View all edges to David whose tie_weight is ==2
 E(graph)[to(&quot;David&quot;) &amp; tie_weight==2]</code></pre>
-<pre><code>## + 3/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 3/44 edges from a0391e2 (vertex names):
 ## [1] Maria-&gt;David Lem  -&gt;David Amber-&gt;David</code></pre>
 <pre class="r"><code># View all edges between women in the network.
 # First get the vertex sequence of all women
 women &lt;- V(graph)[sex==&quot;F&quot;]
 women</code></pre>
-<pre><code>## + 4/12 vertices, named, from 4ae9416:
+<pre><code>## + 4/12 vertices, named, from a0391e2:
 ## [1] Amber Beth  Maria Sofia</code></pre>
 <pre class="r"><code># Then get the edges among them.
 E(graph)[women %--% women]</code></pre>
-<pre><code>## + 12/44 edges from 4ae9416 (vertex names):
+<pre><code>## + 12/44 edges from a0391e2 (vertex names):
 ##  [1] Sofia-&gt;Maria Sofia-&gt;Beth  Sofia-&gt;Amber Maria-&gt;Sofia Maria-&gt;Beth 
 ##  [6] Maria-&gt;Amber Beth -&gt;Sofia Beth -&gt;Maria Beth -&gt;Amber Amber-&gt;Sofia
 ## [11] Amber-&gt;Maria Amber-&gt;Beth</code></pre>
@@ -2068,7 +2069,7 @@ camp &lt;- graph_from_adjacency_matrix(campnet.adj,
 <pre class="r"><code># Note that actors in the graph are in the same order as actors in the attribute
 # data frame.
 V(camp)</code></pre>
-<pre><code>## + 18/18 vertices, named, from 5a7c297:
+<pre><code>## + 18/18 vertices, named, from 804550c:
 ##  [1] ANN     BERT    BILL    BRAZEY  CAROL   DON     GERY    HARRY   HOLLY  
 ## [10] JENNIE  JOHN    LEE     MICHAEL PAM     PAT     PAULINE RUSS    STEVE</code></pre>
 <pre class="r"><code>campnet.attr$id</code></pre>
@@ -2082,9 +2083,9 @@ V(camp)$Role &lt;- campnet.attr$Role
 
 # Let&#39;s print the graph
 camp</code></pre>
-<pre><code>## IGRAPH 5a7c297 DN-- 18 54 -- 
+<pre><code>## IGRAPH 804550c DN-- 18 54 -- 
 ## + attr: name (v/c), Gender (v/c), Role (v/c)
-## + edges from 5a7c297 (vertex names):
+## + edges from 804550c (vertex names):
 ##  [1] ANN   -&gt;JENNIE  ANN   -&gt;PAM     ANN   -&gt;PAULINE BERT  -&gt;LEE    
 ##  [5] BERT  -&gt;RUSS    BERT  -&gt;STEVE   BILL  -&gt;DON     BILL  -&gt;HARRY  
 ##  [9] BILL  -&gt;MICHAEL BRAZEY-&gt;BERT    BRAZEY-&gt;LEE     BRAZEY-&gt;STEVE  
