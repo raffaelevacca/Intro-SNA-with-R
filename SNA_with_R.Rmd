@@ -1,0 +1,55 @@
+---
+title: "Quick introduction to SNA with R"
+author: 
+  name: "Raffaele Vacca"
+  email: "[raffaelevacca.com](https://www.raffaelevacca.com/)"
+  affiliation: "University of Milan"
+date: '`r Sys.Date()`'
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_file="./docs/index.html") })
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+    toc_float: true
+    theme: flatly
+---
+
+```{r include=FALSE}
+# Set up root directory to project directory (not Rmd file directory)
+# knitr::opts_knit$set(root.dir = '../')
+```
+
+```{r include=FALSE, cache=FALSE}
+# Read script in
+knitr::read_chunk("SNA_with_R.R")
+```
+
+# Importing and visualizing network data
+
+* Importing network data from external edge list.
+* Importing node attributes from external dataset.
+* Plotting networks with `igraph` and with `ggraph`.
+* Plotting with different network layouts.
+
+```{r import, echo = TRUE, message = FALSE}
+```
+
+# Network objects and attributes 
+
+* Vertex and edge attributes.
+* Using vertex and edge attributes to analyze network composition.
+* Using vertex and edge attributes to analyze network structure.
+* Visualizing characteristics of network composition and structure.
+
+```{r attr-indexing, echo = TRUE, message = TRUE}
+```
+
+# Example of network measures: centrality
+
+* Importing network data from external adjacency matrix.
+* Calculate and analyze centrality measures.
+* Visualize centrality measures.
+
+```{r centrality, echo = TRUE, message = TRUE}
+```
