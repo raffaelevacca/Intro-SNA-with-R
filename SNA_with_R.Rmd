@@ -27,10 +27,10 @@ knitr::read_chunk("SNA_with_R.R")
 
 # Importing and visualizing network data
 
-* Importing network data from external edge list.
-* Importing node attributes from external dataset.
-* Plotting networks with `igraph` and with `ggraph`.
-* Plotting with different network layouts.
+* Import network data from external edge list.
+* Import node attributes from external dataset.
+* Plot networks with `igraph` and with `ggraph`.
+* Plot with different network layouts.
 
 ```{r import, echo = TRUE, message = FALSE}
 ```
@@ -38,18 +38,18 @@ knitr::read_chunk("SNA_with_R.R")
 # Network objects and attributes 
 
 * Vertex and edge attributes.
-* Using vertex and edge attributes to analyze network composition.
-* Using vertex and edge attributes to analyze network structure.
-* Visualizing characteristics of network composition and structure.
+* Use vertex and edge attributes to analyze network composition.
+* Use vertex and edge attributes to analyze network structure.
+* Visualize characteristics of network composition and structure.
 
 ```{r attr-indexing, echo = TRUE, message = TRUE}
 ```
 
 # Example of network measures: centrality
 
-* Importing network data from external adjacency matrix.
+* Import network data from external adjacency matrix.
 * Calculate and analyze centrality measures.
-* Visualize centrality measures.
+* Visualize centrality in network plots.
 
 ```{r centrality, echo = TRUE, message = TRUE}
 ```
