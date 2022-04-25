@@ -15,7 +15,7 @@ output:
     theme: flatly
 ---
 
-Quick introduction to [`igraph`](https://igraph.org/r/) and [`ggraph`](https://ggraph.data-imaginist.com/) for SNA in R, materials for my PhD seminars at [Unimi](https://www.nasp.eu/training/phd-programmes/esls.html) and [Unimib](https://en.unimib.it/education/doctoral-research-phd-programmes/phd-programmes/urbeur-%E2%80%93-urban-studies).
+Quick introduction to [`igraph`](https://igraph.org/r/) and [`ggraph`](https://ggraph.data-imaginist.com/) for SNA in R, materials for my PhD seminars at [Unimi](https://www.nasp.eu/training/phd-programmes/esls.html) and [Unimib](https://en.unimib.it/education/doctoral-research-phd-programmes/phd-programmes/urbeur-%E2%80%93-urban-studies). Download materials [here](https://github.com/raffaelevacca/Intro-SNA-with-R) (GitHub).
 
 ```{r include=FALSE}
 # Set up root directory to project directory (not Rmd file directory)
